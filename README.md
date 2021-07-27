@@ -38,7 +38,7 @@ urlpatterns = [
 ```
 </details>
     
-Add the view function "createPerson" in views.py. We are going to reuse the template file "create.html" to render the page. For the third parmemter in the render method use an empty dictionary for the time being.
+Create the view function "createPerson" in views.py. We are going to reuse the template file "create.html" to render the page. For the third parmemter in the render method use an empty dictionary for the time being.
 <details>
   <summary>Click for solution</summary>
       
