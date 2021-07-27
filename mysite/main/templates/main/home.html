@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+        My Home Page
+{% endblock %}
+
+{% block content %}
+        <h1>Welcome to my website</h1>
+        <p>I will show you my to do list</p>
+        <ul>
+            {% for todolist in list %}
+                <li>
+                    {{todolist.name}}
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
