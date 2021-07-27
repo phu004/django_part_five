@@ -126,6 +126,6 @@ def createPerson(request):
 ```
 </details>
     
-Once you complete the function you can test it by going to "/main/createPerson" and add a few "Person" objects. If everything goes well, you should see the names of the newly create "Person" being displayed in the "Already Create" section.
+Once you complete the function you can test it by going to "/main/createPerson" and add a few "Person" objects. If everything goes well, you should see the names of the newly create "Person" being displayed in the "Already Created" section.
 
 
