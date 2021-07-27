@@ -100,7 +100,7 @@ If you have done everything correctly up to this point, when you start the serve
     
  <br/><br/>
     
-## 4. Implement logic for saving form data into a database
+## 4. Implement logic for saving the form data into a database
 The "createPerson" function in views.py should also handle POST request from submitting a "createPerson" form. Modify the "createPerson" function so that if the request type is a POST, then use values stored in the POST to create a "Person" object, save the object into the database and finally redirect the user back to an empty "createPerson" form. If you feel stuck, have a look at the "createList" function in the same file, the overall structure looks very similar.
 <details>
   <summary>Click for solution</summary>
