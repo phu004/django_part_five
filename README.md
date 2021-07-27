@@ -1,6 +1,6 @@
 # Django Workshop Exercise 5
 
-In this exercise we will learn how to use the Django "form" to create HTML forms and submit the result into the database. 
+In this exercise we will create a page using the Django's "form" class,  and implement the logic for saving the form data into the database. 
 <br/><br/>
 ## 1. Prepare for the coding environment  
 
@@ -14,8 +14,8 @@ workon dj && cd mysite
 ```
 <br/><br/>
 
-## 2. Setting up routing and view function for the form page.
-A new model "Person" was addedd into the "main" app, you can find its defintion in "models.py" Our Goal is to create a form page which allows you to add "Person" objects into the database.
+## 2. Setting up routing and the view function for the form page.
+A new model "Person" was addedd into the "main" app (see below).
 ```sh
 class Person(models.Model):
     name = models.CharField(max_length=200)
@@ -25,12 +25,13 @@ class Person(models.Model):
     def __str__(self):
         return self.name
 ```
-Create a new path in "urls.py" so the user could reach this form by typing the path "/main/createPerson". The path should use a view function called "createPerson" in views.py. 
+Create a new path in "urls.py" so the user could reach the form by typing the path "/main/createPerson". The path should pass the request to a function called "createPerson" in views.py. 
 <details>
   <summary>Click for solution</summary>
   
 ```sh
 urlpatterns = [
+        path('createPerson', views.createPerson),
         path('createList', views.createList),
         path('<str:name>', views.index),
         path('', views.home),   
@@ -38,7 +39,7 @@ urlpatterns = [
 ```
 </details>
     
-Create the view function "createPerson" in views.py. We are going to reuse the template file "create.html" to render the page. For the third parmemter in the render method use an empty dictionary for the time being.
+Create the view function "createPerson" in views.py. It should reuse the template file "create.html" for rendering,  and the dictionary object that you pass to this template can be empty for the time being.
 <details>
   <summary>Click for solution</summary>
       
@@ -53,7 +54,7 @@ def createPerson(request):
  <br/><br/>
     
 ## 3. Create a Django from for the "Person" model
-In forms.py, add a new class called "CreatePerson" that inherits the Django form. Then for each attribute in the "Person" model, create the corrisponding attributes for the "CreatePerson" class.
+In forms.py, add a new class called "CreatePerson" that inherits the Django form. Then for each attribute in the "Person" model, create the corrisponding attribute for the "CreatePerson" class.
     <details>
   <summary>Click for solution</summary>
       
@@ -100,7 +101,7 @@ If you have done everything correctly up to this point, when you start the serve
  <br/><br/>
     
 ## 4. Implement logic for saving form data into a database
-The "createPerson" function in views.py should also handle POST request from submitting a "createPerson" form. Modify the "createPerson" function so that if the request type is a POST, then uses values stored in the POST to create a "Person" object, save the object into the database and finally redirect the user back to an empty "createPerson" form. If you feel stuck, have a look at the "createList" function in the same file, the overall structure looks very similar.
+The "createPerson" function in views.py should also handle POST request from submitting a "createPerson" form. Modify the "createPerson" function so that if the request type is a POST, then use values stored in the POST to create a "Person" object, save the object into the database and finally redirect the user back to an empty "createPerson" form. If you feel stuck, have a look at the "createList" function in the same file, the overall structure looks very similar.
 <details>
   <summary>Click for solution</summary>
       
@@ -126,6 +127,6 @@ def createPerson(request):
 ```
 </details>
     
-Once you complete the function you can test it by going to "/main/createPerson" and add a few "Person" objects. If everything goes well, you should see the names of the newly create "Person" being displayed in the "Already Created" section.
+Once you complete the function you can test it by going to "/main/createPerson" and add a few "Person" objects. If everything goes well, you should see the names of the newly created "Person" under the "Already Created" section of the page.
 
 
