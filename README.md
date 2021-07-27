@@ -75,9 +75,9 @@ from .forms import CreateNewList, CreatePerson
 </details>
 Then expand the dictionary data with 3 key pairs:
     
-- "form":  A new "CreatePerson" object
-- "create_title": A string "Create Person"
-- "already_created": A list of "Person" objects that being created so far
+- "form" - A new "CreatePerson" object
+- "create_title" -  A string "Create Person"
+- "already_created" - A list of "Person" objects that being created so far
 <details>
   <summary>Click for solution</summary>
       
