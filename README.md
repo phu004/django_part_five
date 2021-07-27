@@ -43,10 +43,10 @@ Create the view function "createPerson" in views.py. We are going to reuse the t
   <summary>Click for solution</summary>
       
 ```sh
-def createPerson(response):
+def createPerson(request):
     data = {
     }
-    return render(response, "main/create.html", data)
+    return render(request, "main/create.html", data)
 ```
 </details>
     
@@ -82,7 +82,7 @@ Then expand the dictionary data with 3 key pairs:
   <summary>Click for solution</summary>
       
 ```sh
-def createPerson(response):
+def createPerson(request):
     form = CreatePerson()
     already_created = Person.objects.all()
     data = {
@@ -90,9 +90,14 @@ def createPerson(response):
         "create_title": "Create Person", 
         "already_created": already_created
     }
-    return render(response, "main/create.html", data)
+    return render(request, "main/create.html", data)
 ```
 </details>
 If you have done everything correctly up to this point, when you start the server and go to the path /main/createPerson, you should see something similar to below:
     
 ![alt text](https://github.com/phu004/django_part_five/blob/main/workshop5a.png)
+    
+ <br/><br/>
+    
+## 4. Implement logic for saving form data into a ddatabase
+The ""
