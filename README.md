@@ -25,7 +25,7 @@ class Person(models.Model):
     def __str__(self):
         return self.name
 ```
-Add a new path in "urls.py" so the user could reach this form by typing the path "/main/createPerson". The path should use a view function called "createPerson" in views.py. 
+Create a new path in "urls.py" so the user could reach this form by typing the path "/main/createPerson". The path should use a view function called "createPerson" in views.py. 
 <details>
   <summary>Click for solution</summary>
   
