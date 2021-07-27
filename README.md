@@ -74,14 +74,24 @@ from .forms import CreateNewList, CreatePerson
 ```
 </details>
 Then expand the dictionary data with 3 key pairs:
+    
 - "form" should map to a new "CreatePerson" object
 - "create_title" should map to the string "Create Person"
 - "already_created" should map to a list of objects that have been created for the "Person" model
-    
+<details>
+  <summary>Click for solution</summary>
+      
 ```sh
-class CreatePerson(forms.Form):
-    name = forms.CharField(max_length=200)
-    age = forms.IntegerField()
-    title = forms.CharField(max_length=200)
+def createPerson(response):
+    form = CreatePerson()
+    already_created = Person.objects.all()
+    data = {
+        "form": form, 
+        "create_title": "Create Person", 
+        "already_created": already_created
+    }
+    return render(response, "main/create.html", data)
 ```
 </details>
+If you have done everything correctly up to this point, when you start the server and go to the path /main/createPerson, you should see something similar to below:
+    
