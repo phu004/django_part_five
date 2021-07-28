@@ -15,16 +15,6 @@ workon dj && cd mysite
 <br/><br/>
 
 ## 2. Setting up routing and the view function for the form page.
-A new model "Person" was addedd into the "main" app (see below).
-```sh
-class Person(models.Model):
-    name = models.CharField(max_length=200)
-    age = models.IntegerField()
-    title = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.name
-```
 Add a new path in "urls.py" (inside the main app folder), so the user can  reach the form by typing the path "/main/createPerson". The path should pass the request to a function called "createPerson" in views.py. 
 <details>
   <summary>Click for solution</summary>
@@ -54,6 +44,16 @@ def createPerson(request):
  <br/><br/>
     
 ## 3. Create a Django from for the "Person" model
+A new model "Person" was addedd into the "main" app (see below).
+```sh
+class Person(models.Model):
+    name = models.CharField(max_length=200)
+    age = models.IntegerField()
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+```
 In forms.py, add a new class called "CreatePerson" that inherits the Django form. Then for each attribute in the "Person" model, create the corrisponding attribute for the "CreatePerson" class.
     <details>
   <summary>Click for solution</summary>
