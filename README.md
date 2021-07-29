@@ -50,7 +50,7 @@ class Person(models.Model):
     name = models.CharField(max_length=200)
     age = models.IntegerField()
     title = models.CharField(max_length=200)
-
+    
     def __str__(self):
         return self.name
 ```
